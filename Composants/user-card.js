@@ -11,49 +11,67 @@ class UserCard extends LitElement {
   static styles = css`
     :host {
       display: block;
-      border: 1px solid #ccc;
-      border-radius: 10px;
+      border: 1px solid #444;
+      border-radius: 16px;
       padding: 1rem;
-      max-width: 250px;
-      background-color: var(--card-bg, white);
-      color: var(--card-text, black);
-      transition: all 0.3s ease;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-      font-family: Arial, sans-serif;
+      max-width: 220px;
+      background-color: var(--card-bg, #fff);
+      color: var(--card-text, #000);
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      transition: 0.3s ease;
     }
 
     img {
       width: 80px;
       height: 80px;
-      border-radius: 50%;
       display: block;
-      margin: auto;
+      margin: 0 auto 0.5rem;
     }
 
     h2 {
-      text-align: center;
-      margin: 0.5em 0 0.2em;
+      font-size: 1.2rem;
+      margin: 0.3em 0;
     }
 
     .types {
       display: flex;
-      justify-content: center;
-      gap: 0.5em;
       flex-wrap: wrap;
-      margin-bottom: 1em;
+      justify-content: center;
+      gap: 0.4em;
+      margin: 0.5em 0 1em;
     }
 
     .type {
-      background-color: #eee;
-      padding: 0.2em 0.5em;
-      border-radius: 5px;
-      font-size: 0.8em;
+      padding: 0.3em 0.6em;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      background-color: #ddd;
+      color: #333;
+      text-transform: capitalize;
     }
 
     .stat {
-      font-size: 0.85em;
-      margin: 0.2em 0;
+      text-align: left;
+      font-size: 0.85rem;
+      padding: 0.2em 0;
     }
+
+    .stat span {
+      font-weight: bold;
+    }
+
+    /* Example color coding for types */
+    .type.Électrik { background: #FFCE4B; color: #222; }
+    .type.Plante   { background: #78C850; color: #fff; }
+    .type.Poison   { background: #A040A0; color: #fff; }
+    .type.Feu      { background: #F08030; color: #fff; }
+    .type.Eau      { background: #6890F0; color: #fff; }
+    .type.Vol      { background: #A890F0; color: #000; }
+    
+    /* Add more type classes as needed */
   `;
 
   constructor() {
@@ -66,17 +84,17 @@ class UserCard extends LitElement {
 
   render() {
     return html`
-      <img src="${this.avatar}" alt="${this.name}" />
+      <img src="${this.avatar}" alt="Avatar de ${this.name}" />
       <h2>${this.name}</h2>
       <div class="types">
-        ${this.types.map(type => html`<span class="type">${type}</span>`)}
+        ${this.types.map(type => html`<span class="type ${type}">${type}</span>`)}
       </div>
-      <div class="stat">❤️ HP: ${this.stats.hp}</div>
-      <div class="stat">⚔️ Attaque: ${this.stats.attack}</div>
-      <div class="stat">🛡️ Défense: ${this.stats.defense}</div>
-      <div class="stat">🌟 Atq. Spé.: ${this.stats.specialAttack}</div>
-      <div class="stat">🔰 Déf. Spé.: ${this.stats.specialDefense}</div>
-      <div class="stat">⚡ Vitesse: ${this.stats.speed}</div>
+      <div class="stat">❤️ <span>HP:</span> ${this.stats.hp}</div>
+      <div class="stat">⚔️ <span>Attaque:</span> ${this.stats.attack}</div>
+      <div class="stat">🛡️ <span>Défense:</span> ${this.stats.defense}</div>
+      <div class="stat">🌟 <span>Atq. Spé.:</span> ${this.stats.specialAttack}</div>
+      <div class="stat">🔰 <span>Déf. Spé.:</span> ${this.stats.specialDefense}</div>
+      <div class="stat">⚡ <span>Vitesse:</span> ${this.stats.speed}</div>
     `;
   }
 }
