@@ -63,15 +63,51 @@ class UserCard extends LitElement {
       font-weight: bold;
     }
 
-    /* Example color coding for types */
-    .type.Électrik { background: #FFCE4B; color: #222; }
-    .type.Plante   { background: #78C850; color: #fff; }
-    .type.Poison   { background: #A040A0; color: #fff; }
-    .type.Feu      { background: #F08030; color: #fff; }
-    .type.Eau      { background: #6890F0; color: #fff; }
-    .type.Vol      { background: #A890F0; color: #000; }
-    
-    /* Add more type classes as needed */
+    .extra {
+      margin-top: 1rem;
+    }
+
+    .type.Acier      { background: #B8B8D0; color: #000; }
+    .type.Combat     { background: #C03028; color: #fff; }
+    .type.Dragon     { background: #7038F8; color: #fff; }
+    .type.Fée        { background: #EE99AC; color: #000; }
+    .type.Insecte    { background: #A8B820; color: #000; }
+    .type.Normal     { background: #A8A878; color: #000; }
+    .type.Psy        { background: #F85888; color: #fff; }
+    .type.Roche      { background: #B8A038; color: #000; }
+    .type.Sol        { background: #E0C068; color: #000; }
+    .type.Spectre    { background: #705898; color: #fff; }
+    .type.Ténèbres   { background: #705848; color: #fff; }
+    .type.Glace      { background: #98D8D8; color: #000; }
+    .type.Vol        { background: #A890F0; color: #000; } 
+    .type.Électrik   { background: #FFCE4B; color: #222; } 
+    .type.Plante     { background: #78C850; color: #fff; }
+    .type.Poison     { background: #A040A0; color: #fff; } 
+    .type.Feu        { background: #F08030; color: #fff; } 
+    .type.Eau        { background: #6890F0; color: #fff; } 
+
+    .stat-bar {
+      height: 10px;
+      border-radius: 6px;
+      overflow: hidden;
+      background-color: #eee;
+      margin-top: 0.2em;
+    }
+
+    .stat-bar-inner {
+      height: 100%;
+      border-radius: 6px;
+      transition: width 0.3s ease;
+    }
+
+    .hp { background-color: #81C784; }           
+    .attack { background-color: #FFEB3B; }       
+    .defense { background-color: #FFB74D; }      
+    .specialAttack { background-color: #4DD0E1; } 
+    .specialDefense { background-color: #7986CB; }
+    .speed { background-color: #BA68C8; }         
+
+
   `;
 
   constructor() {
@@ -89,12 +125,48 @@ class UserCard extends LitElement {
       <div class="types">
         ${this.types.map(type => html`<span class="type ${type}">${type}</span>`)}
       </div>
-      <div class="stat">❤️ <span>HP:</span> ${this.stats.hp}</div>
-      <div class="stat">⚔️ <span>Attaque:</span> ${this.stats.attack}</div>
-      <div class="stat">🛡️ <span>Défense:</span> ${this.stats.defense}</div>
-      <div class="stat">🌟 <span>Atq. Spé.:</span> ${this.stats.specialAttack}</div>
-      <div class="stat">🔰 <span>Déf. Spé.:</span> ${this.stats.specialDefense}</div>
-      <div class="stat">⚡ <span>Vitesse:</span> ${this.stats.speed}</div>
+      <div class="stat">
+        ❤️ <span>HP:</span> ${this.stats.hp}
+        <div class="stat-bar">
+          <div class="stat-bar-inner hp" style="width: ${this.stats.hp / 2}%;"></div>
+        </div>
+      </div>
+      <div class="stat">
+        ⚔️ <span>Attaque:</span> ${this.stats.attack}
+        <div class="stat-bar">
+          <div class="stat-bar-inner attack" style="width: ${this.stats.attack / 2}%;"></div>
+        </div>
+      </div>
+      <div class="stat">
+        🛡️ <span>Défense:</span> ${this.stats.defense}
+        <div class="stat-bar">
+          <div class="stat-bar-inner defense" style="width: ${this.stats.defense / 2}%;"></div>
+        </div>
+      </div>
+      <div class="stat">
+        🌟 <span>Atq. Spé.:</span> ${this.stats.specialAttack}
+        <div class="stat-bar">
+          <div class="stat-bar-inner specialAttack" style="width: ${this.stats.specialAttack / 2}%;"></div>
+        </div>
+      </div>
+      <div class="stat">
+        🔰 <span>Déf. Spé.:</span> ${this.stats.specialDefense}
+        <div class="stat-bar">
+          <div class="stat-bar-inner specialDefense" style="width: ${this.stats.specialDefense / 2}%;"></div>
+        </div>
+      </div>
+      <div class="stat">
+        ⚡ <span>Vitesse:</span> ${this.stats.speed}
+        <div class="stat-bar">
+          <div class="stat-bar-inner speed" style="width: ${this.stats.speed / 2}%;"></div>
+        </div>
+      </div>
+
+
+      <div class="extra">
+        <slot name="badge"></slot>
+        <slot name="desc"></slot>
+      </div>
     `;
   }
 }
