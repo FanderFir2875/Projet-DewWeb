@@ -1,6 +1,9 @@
 import { LitElement, html, css } from 'https://unpkg.com/lit@2.8.0/index.js?module';
 
-
+/**
+ * Composant héritant de LitElement : ThemeToggle
+ * change le theme css entre une apparence sombre ou claire.
+ */
 class ThemeToggle extends LitElement {
   static styles = css`
     button {
@@ -11,18 +14,23 @@ class ThemeToggle extends LitElement {
     }
   `;
 
+  //Constructeur initialisant le theme de base a clair (light)
   constructor() {
     super();
     this.theme = 'light';
   }
 
+  //toggle du theme sombre || clair
   toggleTheme() {
-    const isDark = this.theme === 'dark';
-    this.theme = isDark ? 'light' : 'dark';
-    document.documentElement.style.setProperty('--card-bg', isDark ? 'white' : '#333');
+    const isDark = this.theme === 'dark'; //constante bool
+    this.theme = isDark ? 'light' : 'dark'; //affecte le theme en sombre ou clair si isDark.
+
+    //change les propriétées style des element du DOM (style de user-card)
+    document.documentElement.style.setProperty('--card-bg', isDark ? 'white' : '#333'); 
     document.documentElement.style.setProperty('--card-text', isDark ? 'black' : 'white');
   }
 
+  //affiche le composant
   render() {
     return html`
       <button @click="${this.toggleTheme}">

@@ -1,6 +1,12 @@
 import { LitElement, html, css } from 'https://unpkg.com/lit@2.7.5/index.js?module';
 
+/**
+ * Composant héritant de LitElement : UserCard
+ * une carte representant une entité (exemple: un pokemon)
+ */
 class UserCard extends LitElement {
+
+  //liste des propriétés des elements
   static properties = {
     name: { type: String },
     avatar: { type: String },
@@ -8,6 +14,7 @@ class UserCard extends LitElement {
     types: { type: Array }
   };
 
+  //style
   static styles = css`
     :host {
       display: block;
@@ -110,6 +117,7 @@ class UserCard extends LitElement {
 
   `;
 
+  // initialisation des attributs pour construire la carte
   constructor() {
     super();
     this.name = 'Inconnu';
@@ -118,50 +126,58 @@ class UserCard extends LitElement {
     this.types = [];
   }
 
+  //affichage de la carte
   render() {
     return html`
       <img src="${this.avatar}" alt="Avatar de ${this.name}" />
+
       <h2>${this.name}</h2>
+
       <div class="types">
         ${this.types.map(type => html`<span class="type ${type}">${type}</span>`)}
       </div>
+
       <div class="stat">
         ❤️ <span>HP:</span> ${this.stats.hp}
         <div class="stat-bar">
           <div class="stat-bar-inner hp" style="width: ${this.stats.hp / 2}%;"></div>
         </div>
       </div>
+
       <div class="stat">
         ⚔️ <span>Attaque:</span> ${this.stats.attack}
         <div class="stat-bar">
           <div class="stat-bar-inner attack" style="width: ${this.stats.attack / 2}%;"></div>
         </div>
       </div>
+
       <div class="stat">
         🛡️ <span>Défense:</span> ${this.stats.defense}
         <div class="stat-bar">
           <div class="stat-bar-inner defense" style="width: ${this.stats.defense / 2}%;"></div>
         </div>
       </div>
+
       <div class="stat">
         🌟 <span>Atq. Spé.:</span> ${this.stats.specialAttack}
         <div class="stat-bar">
           <div class="stat-bar-inner specialAttack" style="width: ${this.stats.specialAttack / 2}%;"></div>
         </div>
       </div>
+
       <div class="stat">
         🔰 <span>Déf. Spé.:</span> ${this.stats.specialDefense}
         <div class="stat-bar">
           <div class="stat-bar-inner specialDefense" style="width: ${this.stats.specialDefense / 2}%;"></div>
         </div>
       </div>
+
       <div class="stat">
         ⚡ <span>Vitesse:</span> ${this.stats.speed}
         <div class="stat-bar">
           <div class="stat-bar-inner speed" style="width: ${this.stats.speed / 2}%;"></div>
         </div>
       </div>
-
 
       <div class="extra">
         <slot name="badge"></slot>
