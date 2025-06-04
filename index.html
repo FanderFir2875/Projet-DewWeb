@@ -9,11 +9,11 @@
     <script type="module" src="./Composants/user-list.js"></script>
     <script type="module" src="./Composants/theme-toggle.js"></script>
 
-    <!-- Style global -->
+    <!-- Style global  f4f6f8 -->
     <style>
       body {
         font-family: 'Segoe UI', sans-serif;
-        background: #f4f6f8;
+        background: var(--card-bg, #fff);
         margin: 0;
         padding: 2rem;
         display: flex;
@@ -24,7 +24,7 @@
       }
 
       h1 {
-        color: #333;
+        color: var(--card-text, #000);
         margin-bottom: 1.5rem;
       }
 
@@ -34,7 +34,7 @@
         padding: 1rem;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         border-radius: 12px;
-        background-color: #fff;
+        background-color: var(--card-bg2, #eee);
       }
 
       theme-toggle {

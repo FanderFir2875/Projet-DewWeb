@@ -9,8 +9,8 @@ class UserList extends LitElement {
   //style de la liste
   static styles = css`
     .container {
-      background-color: #1e1e1e;
-      color: white;
+      background-color: var(--card-bg, #fff);
+      color: var(--card-text, #000);
       padding: 2rem;
       min-height: 100vh;
       display: flex;
@@ -21,7 +21,7 @@ class UserList extends LitElement {
     }
 
     form {
-      background: #2c2c2c;
+      background: var(--card-bg2, #eee);
       padding: 1rem;
       border-radius: 12px;
       display: flex;
@@ -56,7 +56,7 @@ class UserList extends LitElement {
     }
 
     .types-checkboxes label {
-      background: #444;
+      background: var(--card-bg, #fff);
       padding: 0.3rem 0.6rem;
       border-radius: 8px;
       cursor: pointer;

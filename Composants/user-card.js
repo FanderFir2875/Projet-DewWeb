@@ -22,7 +22,7 @@ class UserCard extends LitElement {
       border-radius: 16px;
       padding: 1rem;
       max-width: 220px;
-      background-color: var(--card-bg, #fff);
+      background-color: var(--card-bg2, #fff);
       color: var(--card-text, #000);
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
       font-family: 'Segoe UI', sans-serif;

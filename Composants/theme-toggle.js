@@ -28,16 +28,17 @@ class ThemeToggle extends HTMLElement {
     this.theme = isDark ? 'light' : 'dark'; //affecte le theme en sombre ou clair si isDark.
 
     //change les propriétées style des element du DOM (style de user-card)
-    document.documentElement.style.setProperty('--card-bg', isDark ? 'white' : '#333'); 
+    document.documentElement.style.setProperty('--card-bg', isDark ? 'white' : '#111'); 
     document.documentElement.style.setProperty('--card-text', isDark ? 'black' : 'white');
+    document.documentElement.style.setProperty('--card-bg2', isDark ? '#eee' : '#333'); 
 
     //change le texte du bouton
-    this.button.innerText = `Changer le thème (${this.theme === 'light' ? 'Clair' : 'Sombre'})`;
+    this.button.innerText = `Changer le thème ${this.theme === 'light' ? '☀️' : '🌙'}`;
   }
 
   //affiche le composant
   connectedCallback() {
-    this.button.innerText =`Changer le thème (${this.theme === 'light' ? 'Clair' : 'Sombre'})`;
+    this.button.innerText =`Changer le thème ${this.theme === 'light' ? '☀️' : '🌙'}`;
 
     //Event listener
     this.button.addEventListener('click', this.toggleTheme.bind(this));
