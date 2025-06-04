@@ -1,25 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
+  <head>
     <meta charset="UTF-8" />
     <title>UserCard App - Lit</title>
+
+    <!-- Import des composants -->
     <script type="module" src="./Composants/user-card.js"></script>
     <script type="module" src="./Composants/user-list.js"></script>
     <script type="module" src="./Composants/theme-toggle.js"></script>
 
+    <!-- Style global -->
     <style>
-        body {
-        font-family: sans-serif;
-        margin: 2rem;
-        }
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background: #f4f6f8;
+        margin: 0;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        transition: background 0.3s ease;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 1.5rem;
+      }
+
+      main {
+        width: 100%;
+        max-width: 900px;
+        padding: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        background-color: #fff;
+      }
+
+      theme-toggle {
+        margin-bottom: 2rem;
+      }
     </style>
-    
-    </head>
+  </head>
 
-    <body>
-        
+  <body>
+    <h1>🧩 Application Pokémon Personnalisés</h1>
     <theme-toggle></theme-toggle>
-    <user-list></user-list>
 
-    </body>
+    <main>
+      <user-list></user-list>
+    </main>
+  </body>
 </html>
