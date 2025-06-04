@@ -1,0 +1,12 @@
+button 
+{
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    background-color: var(--card-bg, #fff);
+    color: var(--card-text, #000);
+    border: #000, 2px, solid;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}

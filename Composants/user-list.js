@@ -1,5 +1,4 @@
 import { LitElement, html, css } from 'https://unpkg.com/lit@2.7.5/index.js?module';
-import './user-card.js';
 
 /**
  * Composant héritant de LitElement : UserList
