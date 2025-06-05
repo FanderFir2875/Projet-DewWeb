@@ -42,7 +42,7 @@ Ce projet utilise Lit pour créer des composants Web réutilisables permettant d
 
 <!-- Pour le selecteur de thème -->
 <script type="module" src="theme-toggle.js"></script>
-<user-list></user-list>
+<theme-toggle></theme-toggle>
 ```
 
 2. Ajout de Pokémon
