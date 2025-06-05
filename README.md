@@ -5,7 +5,8 @@ Ce projet utilise Lit pour créer des composants Web réutilisables permettant d
 **Composants**
 
 ```html 
-<user-list>```
+<user-list>
+```
 
     Composant principal.
 
@@ -14,14 +15,16 @@ Ce projet utilise Lit pour créer des composants Web réutilisables permettant d
     Validation : max 2 types, stats numériques bornées.
 
 ```html 
-<user-card>```
+<user-card>
+```
 
     Affiche les infos d’un Pokémon : nom, image, types, stats.
 
     Slots personnalisables (badge, desc) pour étendre le contenu.
 
 ```html 
-<theme-toggle>```
+<theme-toggle>
+```
 
     Composant de style de base pour uniformiser l’apparence des cartes.
 
