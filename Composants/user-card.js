@@ -140,42 +140,42 @@ class UserCard extends LitElement {
       <div class="stat">
         ❤️ <span>HP:</span> ${this.stats.hp}
         <div class="stat-bar">
-          <div class="stat-bar-inner hp" style="width: ${this.stats.hp / 2}%;"></div>
+          <div class="stat-bar-inner hp" style="width: ${this.stats.hp * 100 / 255 }%;"></div>
         </div>
       </div>
 
       <div class="stat">
         ⚔️ <span>Attaque:</span> ${this.stats.attack}
         <div class="stat-bar">
-          <div class="stat-bar-inner attack" style="width: ${this.stats.attack / 2}%;"></div>
+          <div class="stat-bar-inner attack" style="width: ${ this.stats.attack * 100 / 190 }%;"></div>
         </div>
       </div>
 
       <div class="stat">
         🛡️ <span>Défense:</span> ${this.stats.defense}
         <div class="stat-bar">
-          <div class="stat-bar-inner defense" style="width: ${this.stats.defense / 2}%;"></div>
+          <div class="stat-bar-inner defense" style="width: ${this.stats.defense * 100 / 230 }%;"></div>
         </div>
       </div>
 
       <div class="stat">
         🌟 <span>Atq. Spé.:</span> ${this.stats.specialAttack}
         <div class="stat-bar">
-          <div class="stat-bar-inner specialAttack" style="width: ${this.stats.specialAttack / 2}%;"></div>
+          <div class="stat-bar-inner specialAttack" style="width: ${this.stats.specialAttack * 100 / 200 }%;"></div>
         </div>
       </div>
 
       <div class="stat">
         🔰 <span>Déf. Spé.:</span> ${this.stats.specialDefense}
         <div class="stat-bar">
-          <div class="stat-bar-inner specialDefense" style="width: ${this.stats.specialDefense / 2}%;"></div>
+          <div class="stat-bar-inner specialDefense" style="width: ${this.stats.specialDefense * 100 / 230 }%;"></div>
         </div>
       </div>
 
       <div class="stat">
         ⚡ <span>Vitesse:</span> ${this.stats.speed}
         <div class="stat-bar">
-          <div class="stat-bar-inner speed" style="width: ${this.stats.speed / 2}%;"></div>
+          <div class="stat-bar-inner speed" style="width: ${this.stats.speed * 100 / 200 }%;"></div>
         </div>
       </div>
 
