@@ -34,16 +34,13 @@ Ce projet utilise Lit pour créer des composants Web réutilisables permettant d
 
 1. Intégration
 
-*Pour les cartes et le formulaire*
 <pre>html<br>
+<!-- Pour les cartes et le formulaire -->
 <script type="module" src="user-list.js"></script>
 <script type="module" src="user-card.js"></script>
 <user-list></user-list>
-<br>
-</pre>
 
-*Pour le selecteur de thème*
-<pre>html<br>
+<!-- Pour le selecteur de thème -->
 <script type="module" src="theme-toggle.js"></script>
 <user-list></user-list>
 <br>
