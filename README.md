@@ -3,10 +3,8 @@
 Ce projet utilise Lit pour créer des composants Web réutilisables permettant de créer et afficher des Pokémon personnalisés.
 
 ## Composants
-
-`html 
-<user-list>
-`
+ 
+`<user-list>`
 
     Composant principal.
 
@@ -14,17 +12,13 @@ Ce projet utilise Lit pour créer des composants Web réutilisables permettant d
 
     Validation : max 2 types, stats numériques bornées.
 
-`html 
-<user-card>
-`
+`<user-card>`
 
     Affiche les infos d’un Pokémon : nom, image, types, stats.
 
     Slots personnalisables (badge, desc) pour étendre le contenu.
 
-`html 
-<theme-toggle>
-`
+`<theme-toggle>`
 
     Composant permettant de choisir le thème d'affichage entre sombre et clair.
 
@@ -41,17 +35,19 @@ Ce projet utilise Lit pour créer des composants Web réutilisables permettant d
 1. Intégration
 
 *Pour les cartes et le formulaire*
-`html
+<pre>html<br>
 <script type="module" src="user-list.js"></script>
 <script type="module" src="user-card.js"></script>
 <user-list></user-list>
-`
+<br>
+</pre>
 
 *Pour le selecteur de thème*
-`html
+<pre>html<br>
 <script type="module" src="theme-toggle.js"></script>
 <user-list></user-list>
-`
+<br>
+</pre>
 
 2. Ajout de Pokémon
 
