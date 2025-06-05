@@ -6,35 +6,35 @@ Ce projet utilise Lit pour créer des composants Web réutilisables permettant d
  
 `<user-list>`
 
-    Composant principal.
+ - Composant principal.
 
-    Gère un formulaire de création de Pokémon et une liste dynamique de cartes (<user-card>).
+ - Gère un formulaire de création de Pokémon et une liste dynamique de cartes (<user-card>).
 
-    Validation : max 2 types, stats numériques bornées.
+ - Validation : max 2 types, stats numériques bornées.
 
 `<user-card>`
 
-    Affiche les infos d’un Pokémon : nom, image, types, stats.
+ - Affiche les infos d’un Pokémon : nom, image, types, stats.
 
-    Slots personnalisables (badge, desc) pour étendre le contenu.
+ - Slots personnalisables (badge, desc) pour étendre le contenu.
 
 `<theme-toggle>`
 
-    Composant permettant de choisir le thème d'affichage entre sombre et clair.
+ - Composant permettant de choisir le thème d'affichage entre sombre et clair.
 
 ## Choix techniques
 
-    Utilisation de Lit via CDN.
+ - Utilisation de Lit via CDN.
 
-    Composants en JavaScript, sans framework.
+ - Composants en JavaScript, sans framework.
 
-    Encapsulation CSS, slots pour la flexibilité, logique locale à chaque composant.
+ - Encapsulation CSS, slots pour la flexibilité, logique locale à chaque composant.
 
 ## Utilisation
 
 1. Intégration
 
-<pre>html<br>
+```html
 <!-- Pour les cartes et le formulaire -->
 <script type="module" src="user-list.js"></script>
 <script type="module" src="user-card.js"></script>
@@ -43,8 +43,7 @@ Ce projet utilise Lit pour créer des composants Web réutilisables permettant d
 <!-- Pour le selecteur de thème -->
 <script type="module" src="theme-toggle.js"></script>
 <user-list></user-list>
-<br>
-</pre>
+```
 
 2. Ajout de Pokémon
 
@@ -54,10 +53,10 @@ Ce projet utilise Lit pour créer des composants Web réutilisables permettant d
 
 ## Apports de Lit
 
-    Templates HTML simples.
+ - Templates HTML simples.
 
-    Réactivité sans DOM manuel.
+ - Réactivité sans DOM manuel.
 
-    Encapsulation et modularité.
+ - Encapsulation et modularité.
 
-    Léger, rapide, idéal pour composants natifs.
+ - Léger, rapide, idéal pour composants natifs.
