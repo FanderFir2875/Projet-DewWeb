@@ -1,6 +1,6 @@
 /**
  * Composant héritant de HTMLElement : ThemeToggle
- * change le theme css entre une apparence sombre ou claire.
+ * change le theme css entre une apparence sombre ou clair.
  */
 class ThemeToggle extends HTMLElement {
 
@@ -17,7 +17,7 @@ class ThemeToggle extends HTMLElement {
 
     this.theme = 'light';
 
-    //encapsulation du bouton
+    //Encapsulation du bouton
     this.button = document.createElement('button');
     this.shadowRoot.appendChild(this.button);
   }
